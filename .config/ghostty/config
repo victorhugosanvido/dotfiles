@@ -1,6 +1,6 @@
 #KEYBINDS
-keybind = control+l=next_tab
-keybind = control+h=previous_tab
+keybind = alt+l=next_tab
+keybind = alt+h=previous_tab
 
 #THEME
 theme = vesper

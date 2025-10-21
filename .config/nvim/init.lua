@@ -121,8 +121,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth',        -- Detect tabstop and shiftwidth automatically
-  'lewis6991/gitsigns.nvim', -- Adds git diff difference in sign space
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  {
+    'lewis6991/gitsigns.nvim', -- Adds git diff difference in sign space
+    opts = {}
+  },
 
   -- Typescript LSP
   {
@@ -185,6 +189,7 @@ require('lazy').setup({
     opts = {
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.opt.timeoutlen
+      preset = 'modern',
       delay = 0,
       icons = {
         -- set icon mappings to true if you have a Nerd Font
@@ -762,13 +767,12 @@ require('lazy').setup({
         }
       })
     end,
-    init = function()
-      vim.cmd.colorscheme 'vesper'
-    end
   },
   {
     'rebelot/kanagawa.nvim',
-
+    init = function()
+      vim.cmd.colorscheme 'kanagawa-dragon'
+    end
   },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },

@@ -101,7 +101,7 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -235,9 +235,9 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
+        //left 4
+        //right 10
+        top -24
         // bottom 64
     }
 }
@@ -246,13 +246,11 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "waybar"
-
+spawn-at-startup "qs" "-c" "noctalia-shell"
+//spawn-at-startup "./usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "xwayland-satellite" 
 spawn-at-startup "slack" 
 spawn-at-startup "ghostty"
-spawn-at-startup "~/Documents/1-Configurations/super_dumb_script_that_works.sh"
-
 
 environment {
     DISPLAY ":0"
